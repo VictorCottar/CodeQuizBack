@@ -1,4 +1,4 @@
-import { getQuestions } from '../services/questionService.js';
+import { getQuestions } from '../service/questionService.js';
 
 export const getQuestionsByTopic = async (req, res) => {
   try {

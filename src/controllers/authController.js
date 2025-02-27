@@ -1,4 +1,4 @@
-import { registerUser, loginUser, verifyToken } from '../services/authService.js';
+import { registerUser, loginUser, verifyToken } from '../service/authService.js';
 
 export const register = async (req, res) => {
     try {
@@ -23,7 +23,7 @@ export const login = async (req, res) => {
 export const authenticateToken = async (req, res, next) => {
     const token = req.headers['authorization'];
     if (!token) {
-        return res.status(401).json({ error: 'Token não fornecido' });
+        return res.status(401).json({ error: 'Token not provided' });
     }
 
     try {
