@@ -15,7 +15,7 @@ const tableMap = {
 export const getQuestions = async (topic, limit) => {
     const tableName = tableMap[topic];
     if (!tableName) {
-        throw new Error('Tópico inválido');
+        throw new Error('Invalid topic');
     }
 
     try {
@@ -26,11 +26,11 @@ export const getQuestions = async (topic, limit) => {
         `);
 
         if (questions.length === 0) {
-            throw new Error('Tópico não encontrado');
+            throw new Error('Topic not found');
         }
 
         return questions;
     } catch (error) {
-        throw new Error('Erro ao buscar as perguntas');
+        throw new Error('Error fetching questions');
     }
 };
